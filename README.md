@@ -27,7 +27,7 @@ dependencyResolutionManagement {
 
 ```kotlin
 dependencies {
-    implementation("io.github.tasherokk:androidwebsocketchatlibrary:1.0.4")
+    implementation("io.github.tasherokk:androidwebsocketchatlibrary:1.0.5")
 }
 ```
 
