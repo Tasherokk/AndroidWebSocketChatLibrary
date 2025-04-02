@@ -61,11 +61,7 @@ class ChatActivity : AppCompatActivity() {
                 }
 
                 runOnUiThread {
-                    val newList = chatAdapter.currentList.toMutableList().apply {
-                        add(ChatMessage(displayText, false))
-                    }
-                    chatAdapter.submitList(newList)
-                    binding.rvMessages.scrollToPosition(newList.size - 1)
+                    chatAdapter.submitNewMessage(ChatMessage(displayText, false), binding.rvMessages)
                 }
             }
 
@@ -87,11 +83,7 @@ class ChatActivity : AppCompatActivity() {
     }
 
     private fun sendMessage(message: String) {
-        val newList = chatAdapter.currentList.toMutableList().apply {
-            add(ChatMessage(message, true))
-        }
-        chatAdapter.submitList(newList)
-        binding.rvMessages.scrollToPosition(newList.size - 1)
+        chatAdapter.submitNewMessage(ChatMessage(message, true), binding.rvMessages)
         webSocket.send(message)
     }
 

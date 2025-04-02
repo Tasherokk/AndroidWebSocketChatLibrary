@@ -12,7 +12,7 @@ afterEvaluate {
 
                 groupId = "io.github.tasherokk"
                 artifactId = "androidwebsocketchatlibrary"
-                version = "1.0.4"
+                version = "1.0.5"
 
                 pom {
                     name.set("Android WebSocket Chat Library")

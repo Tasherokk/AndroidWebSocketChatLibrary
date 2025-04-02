@@ -42,9 +42,11 @@ class ChatAdapter : ListAdapter<ChatMessage, RecyclerView.ViewHolder>(DiffCallba
         }
     }
 
-    fun submitNewMessage(message: ChatMessage) {
+    fun submitNewMessage(message: ChatMessage, recyclerView: RecyclerView) {
         val newList = currentList.toMutableList().apply { add(message) }
-        submitList(newList)
+        submitList(newList) {
+            recyclerView.scrollToPosition(newList.size - 1)
+        }
     }
 
     inner class UserMessageViewHolder(view: View) : RecyclerView.ViewHolder(view) {
